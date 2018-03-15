@@ -1,0 +1,28 @@
+wget http://downloads.sourceforge.net/project/squirrelmail/stable/1.4.22/squirrelmail-webmail-1.4.22.zip
+unzip squirrelmail-webmail-1.4.22.zip -d /var/www/html/
+mv /var/www/html/squirrelmail-webmail-1.4.22/ /var/www/html/webmail
+chown -R apache: /var/www/html/webmail/
+cd /var/www/html/webmail/config
+cp -p config_default.php config.php
+
+$domain = 'YOURDOMAIN.TLD';
+$data_dir = '/var/www/html/webmail/data/';
+$attachment_dir = '/var/www/html/webmail/attach/';
+$smtpServerAddress = 'localhost';
+$imapServerAddress = 'localhost';
+
+
+#!/usr/bin/env python3.6
+
+http://wolohands.com
+http://disireoll.com
+http://blindbest.com
+pteroma.com
+http://worldfrolk.com
+http://hopuly.com
+http://attractionfit.com
+http://sibharth.com
+http://imaptos.com/imaptos
+http://gorcock.com
+http://seminarfun.com
+http://trigstage.info

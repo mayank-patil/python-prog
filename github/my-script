@@ -1,0 +1,150 @@
+
+*IP ADDRESS ADDITION SCRIPT
+for I in $(seq 96 127); do nmcli con mod enp2s0 +ipv4.addresses 103.26.141.${I}/22; done
+
+#Send mail useradd
+yum install sendmail sendmail-cf dovecot -y
+d1=domain1
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support};
+do
+useradd $i.$d1;
+echo 'NfhIBD8787' | passwd --stdin $i.$d1;
+mkdir -p /home/$i.$d1/mail/.imap/INBOX  &&  chown -R $i.$d1:$i.$d1 /home/$i.$d1/mail ;
+chmod -R 700  /home/$i.$d1/mail ;
+echo $i@$d1 $i.$d1 >> /etc/mail/virtusertable
+echo @$d1 bounce.$d1 >> /etc/mail/virtusertable
+echo $i.$d1 $i@$d1 >> /etc/mail/genericstable
+#echo $HOSTNAME > /etc/mail/local-host-names
+echo $d1 > /etc/mail/local-host-names
+echo $d1 > /etc/mail/sendmail.gdf
+m4 /etc/mail/sendmail.mc /etc/mail/sendmail.cf
+make ; make all
+done
+
+
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support}; do echo 'agETreN4' | passwd --stdin $i.$d1; done
+
+
+centos 6
+d=craftsmanlab.com
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support};
+do
+mkdir -p /home/$i.$d/mail/.imap/INBOX  &&  chown -R $i.$d:$i.$d /home/$i.$d/mail ;
+chmod -R 700  /home/$i.$d/mail ;
+done
+
+*vim /etc/mail/sendmail.mc below  line exposed_root line 105
+FEATURE(masquerade_envelope)FEATURE(genericstable, `hash -o /etc/mail/genericstable')
+GENERICS_DOMAIN_FILE(`/etc/mail/sendmail.gdf')
+
+*PMTA install
+cd /
+tar xzvf /opt/pmta4.tar.gz
+rpm -ivh /pmta4/40.rpm
+cp -rvf /pmta4/pmtal64f_87048943/etc/pmta/license /etc/pmta/license
+systemctl start pmta
+systemctl enable pmta
+
+creating records
+d=sheyshj.com
+for i in {thund,rip,hand,dust,regr,teen,wrat,jump,doll,dete,voic,hota,padd,atta,obje,guid,coor,pric,ches,guil,blac,stro,next,reac,pip,arre,snee,dust,feel,bait,disk};
+do
+echo $i.$d.;
+done
+*queue delete
+for i in `cat ip`; do sshpass -p "CLXq(He{tU&Mam" ssh -o StrictHostKeyChecking=no root@$i 'cd /srv ; pmta delete --queue=*/* ; service pmta restart'; done
+*remove Port
+for i in `cat ipname`; do sshpass -p "random@123" ssh -o StrictHostKeyChecking=no root@$i 'cd /srv ; firewall-cmd --remove-port=2525/tcp; firewall-cmd --reload'; done
+
+
+for i in `ls -ld * | grep -v "" | awk '{print $9}'`; do rm -rf $i; done
+
+
+
+# not working
+
+  for i in `cat domain`; do sshpass -p "random@123" ssh -o StrictHostKeyChecking=no root@$i 'cd /' ;  find . -type d -mtime +2 -exec rm -rfv {} \; service pmta restart'; done
+
+find . -type d -mtime +0.5 -exec rm -rfv {} \;
+pmta reload
+##########################################################################################
+echo  Enter usernamehttp://junamind.com/junamind
+read username
+
+echo  Enter password
+read pass
+
+D1=$username
+
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support}; do useradd $i.$D1; done
+
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support}; do echo $pass | passwd --stdin $i.$D1; 		  done
+
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support};
+
+do mkdir -p /home/$i.$D1/mail/.imap/INBOX  &&  chown -R $i.$D1:$i.$D1 /home/$i.$D1/mail/.imap/INBOX ;done
+
+chmod 600 /var/spool/mail/*
+sleep 1
+
+echo  Enter your Suspended Domain name
+read sus
+
+echo  Enter your New Domain name
+read new
+sleep 1
+sed -i  "s/$sus/$new/g" /etc/mail/local-host-names
+
+sed -i "s/$sus/$new/g" /etc/mail/sendmail.gdf
+
+sed -i "s/$sus/$new/g" /etc/mail/virtusertable
+
+sed -i "s/$sus/$new/g" /etc/mail/genericstable
+
+cd /etc/mail
+m4 sendmail.mc sendmail.cf
+make
+make all
+
+sleep 2
+s_test=$(echo $sus | cut -f 1 -d '.')
+
+n_test=$(echo $new | cut -f 1 -d '.')
+
+sed -i  "s/$s_test/$n_test/g" /etc/pmta/config
+
+echo "Enter the key & press CTRL+D to exit"
+
+cat > /etc/pmta/$n_test.key
+
+echo  Enter your database password
+read dbp
+
+sleep 1
+
+mysql -u root -p$dbp -e "create database $n_test";
+
+
+
+sleep
+
+systemctl restart httpd sendmail dovecot pmta mariadb
+
+
+
+############################################################################
+
+#!/bin/bash
+echo Enter 3 Digit of IPs
+read d
+echo Start range
+read s
+echo End range
+read e
+for ((i=$s;i<=$e;i++))
+#for i in $s..$e
+do
+host $d.$i
+done;
+##########################################################################
+grep -rnw '/var/www/html/wotyoski/' -e 'maxhourlyrate'

@@ -1,0 +1,124 @@
+
+1. Enable in Firewall configuraion:-
+#setup
+disable SElinux
+hostnamectl set-hostname
+2.
+firewall-cmd --permanent --add-port={443,25,80,143,110}/tcp
+firewall-cmd --permanent --add-service={http,https,smtp,imap,pop3}
+firewall-cmd --reload
+3.
+  yum install httpd php php-mysql php-imap php-mbstring mariadb-server sendmail sendmail-cf dovecot  -y
+4.
+yum install epel-release.noarch -y
+5.
+yum repolist
+6.
+yum install php-imap -y
+7.
+yum remove epel-release -y
+8.
+9.
+systemctl enable httpd mariadb sendmail dovecot
+10
+systemctl restart httpd mariadb sendmail dovecot
+11
+vim /etc/mail/sendmail.mc
+edit “/etc/mail/sendmail.mc” file, after this commit the following line by “dnl #”
+
+DAEMON_OPTIONS(`Port=smtp,Addr=127.0.0.1, Name=MTA')dnl
+
+Add following lines to the /etc/mail/sendmail.mc file : under line “EXPOSED_USER(`root')dnl”
+
+FEATURE(masquerade_envelope)
+FEATURE(genericstable, `hash -o /etc/mail/genericstable')
+GENERICS_DOMAIN_FILE(`/etc/mail/sendmail.gdf')
+
+12.
+vim /etc/mail/local-host-names
+13.
+vim /etc/mail/genericstable
+ use sendmail user and directory script
+14.
+m4 /etc/mail/sendmail.mc /etc/mail/sendmail.cf
+15.
+vim /etc/mail/sendmail.gdf
+16.
+m4 /etc/mail/sendmail.mc /etc/mail/sendmail.cf
+
+make ; make all
+18.
+vim /etc/dovecot/conf.d/10-auth.conf
+    change line 100
+19.
+vim /etc/dovecot/conf.d/10-mail.conf
+
+    uncomit line 25
+20.
+  systemctl restart httpd mariadb sendmail dovecot
+21.
+use pmta installation script
+22.
+cp -rvf /pmta4/pmtal64f_87048943/usr/sbin/* /usr/sbin/
+23.
+systemctl start pmta
+24.
+systemctl enable pmta
+25.
+use pmta config script
+26.
+mv newpmta /etc/pmta/config
+27.
+vim /etc/pmta/config
+28.
+vim /etc/pmta/ghonogu.key
+29.
+service pmta restart
+30.
+systemctl enable pmta
+31. vim /etc/php.ini
+32.
+egrep --color 'upload_max_filesize|max_execution_time|memory_limit|post_max_size' /etc/php.ini
+sed -i 's/max_execution_time = 30/max_execution_time = 300/g' /etc/php.ini
+sed -i 's/memory_limit = 128/memory_limit = 512/g' /etc/php.ini
+sed -i 's/post_max_size = 8/post_max_size = 80/g' /etc/php.ini
+sed -i 's/upload_max_filesize = 2/upload_max_filesize = 50/g' /etc/php.ini
+egrep --color 'upload_max_filesize|max_execution_time|memory_limit|post_max_size' /etc/php.ini
+service httpd restart
+38.
+unzip License_iem_fbl_import_spam_emailmarketer.zip
+39.
+mv License_iem_fbl_import_spam_emailmarketer /var/www/html/duvoim
+mv License_iem_fbl_import_spam_emailmarketer /var/www/html/hrampu
+mv License_iem_fbl_import_spam_emailmarketer /var/www/html/latekha
+mv License_iem_fbl_import_spam_emailmarketer /var/www/html/pahikai
+
+40.
+chmod -R 777 /var/www/html/
+42.
+chmod -R 777 /var/www/html/iem/
+43.
+chmod -R 777 /var/www/html/iem/*
+44.
+mysql_secure_installation
+45.
+mysql -u root -pHFI6AwRestu
+46.
+create database dbname;
+47.
+exit
+48.
+add these email-ids in suppresion
+charlaamge@yahoo.com
+charlamage@hotmail.com
+charlamage@iwon.com
+charlamage@yahoo.com
+chmage0-earn4youth@yahoo.com
+charles_haeussinger@live.com
+charles.haeussinger_legalaffairs@outlook.com
+18na@yahoo.com
+na4x@yahoo.com
+0bc9@yahoo.com
+sws.galactica@yahoo.com
+busterclone@yahoo.com
+sws.new.s5@yahoo.com

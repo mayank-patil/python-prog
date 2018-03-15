@@ -1,0 +1,7 @@
+9300013211 trundeep sir
+9098719991 Mohit sir
+9300002529 Ajay sir
+9893605532 Rohit sukla sir
+7898900302-Navin Streemlime- UPS
+
+for i in `cat domain`; do sshpass -p "random@123" ssh -o StrictHostKeyChecking=no root@$i 'cd /' ;  find . -type d -mtime +2 -exec rm -rfv {} \; service pmta restart'; done

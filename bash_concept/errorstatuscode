@@ -1,0 +1,15 @@
+#to check error status of a command execute this after the command
+#0 for success
+echo $?
+
+#to stop a bash script if an error is executed
+set -e
+#using array
+#!/bin/bash
+SERVER=("web1" "web2" "web3" "web4")
+COUNT=0
+
+  for INDEX in ${SERVER[@]}; do
+  echo "Processing Server : ${SERVER[COUNT]}"
+  COUNT="`expr $COUNT + 1`"
+  done
