@@ -1,0 +1,37 @@
+
+cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep csi.cloudmark |cut -d',' -f15 |sort -u
+cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep verizon
+cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep verizon |cut -d',' -f15 |sort -u
+pmtastats top-domains /var/log/pmta/acct-2017-0pmtastats top-domains /var/log/pmta/acct-2017-0(monthname)
+pmtastats "top-domains" /var/log/pmta/acct-2017-(date)
+sync; echo 3 > /proc/sys/vm/drop_caches
+
+  v=spf1 mx a ptr 103.225.131.64 ?all
+
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep hotmail |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep comcast |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep trendmicro |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep cyren |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep barracudanetworks |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep spamcop |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep dnsbl.de |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep cox |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep symantic |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "https://drive.google.com/open?id=1ohxQlXjUdGLkYi6SpFjug7AYTHkKys_Lsuccess" | grep borderware |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep fortiguard |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep lashback |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep csi.cloudmark |cut -d',' -f15 |sort -u
+    cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep verizon |cut -d',' -f15 |sort -u
+
+  cat /var/log/pmta/acct-2017-09-21-000* | grep success |grep gmail | grep vmta-129 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-129 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-101 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-101 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-132 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-133 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-134 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-135 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-137 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-138 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-139 | wc -l
+    cat /var/log/pmta/acct-2017-09-24-000* |grep aol | grep vmta-140 | wc -l

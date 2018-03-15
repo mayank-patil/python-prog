@@ -1,0 +1,5 @@
+a = input("enter a input: ")
+print("")
+print(a.upper())
+print("")
+print(a.lower())

@@ -1,0 +1,65 @@
+This article is about setting up a catch all email account on your mail server.
+ well before we go into the messy technical part let's first understand how does an email
+ works and what is a catch all email address.
+                              if You have ever wondered how email works
+ well its easy.
+You create an email account on an inbox Provider like (Gmail, Hotmail.. etc)
+You then Create an email content add Reciptents to it.
+and just click Send BUTTON Right!
+The reciptents then receive the email you sent in there Inbox.
+things may look simple this way but are way more complex at the backend arch.
+
+This was a case of using a third party Inbox Provider But what if You have your own
+email server hosted with you websites Domain Name.
+
+What is a Catch all email account
+
+A catch-all email account is an address that is specified to receive all messages
+that are addressed to an incorrect email address for a domain
+
+For Example:
+
+suppose you have a website named:"mail.com" and a mail server Pre configured on this
+website with a bunch of email account which are:-
+
+support@mail.com - Technical Department
+sales@mail.com - Sales Department
+info@mail.com - Product related Querries
+admin@mail.com - Websites Administrator
+
+These are email accounts which are associated with the required user.
+these email addresses receive email's regularly and all emails are
+important and consist of sensitive intel about the organization.
+
+But what if one of there client sent an important information to the
+sales department and misspelled the email address of the Sales Department i.e
+
+"satles@mail.com"
+
+in that case the email that the client sent them will bounce back to his inbox with an error
+"you have entred a wrong address BLAH BLAH BLAH BLAH!!!!!"
+
+what if that email was important to the sales Department.
+in such cases we can set up a catch all address Which will
+receive all the Bounce email's(incorrect) to its Inbox So that each and every lost email can be
+retrieved from there.
+
+How catch all Works:
+
+Well Its Simple, It just Check for email address If the Reciptents address is correct
+than it is delivered to inbox of the respected account and if the address is incorrect
+it redirects the email to the catchall Email address
+
+Since now that You have understand what is a catch all email server, lets jump to how can we
+configure it.
+
+Tutorial:
+
+Required
+* A Centos Linux based Machine With sendmail Email server Pre configured
+if you want to configure Sendmail Follow the link
+https://www.rosehosting.com/blog/install-and-configure-a-simple-mail-server-using-sendmail-and-dovecot-on-a-fedora-20-vps/
+* SSH access to root user of the server.
+
+1. SSH to your server With root user account
+2. root@mail:~# 

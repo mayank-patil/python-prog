@@ -1,0 +1,39 @@
+Formatting Strings using Escape Sequences
+
+You can use two or more specially designated characters within a string to format a string or perform a command. These characters are called escape sequences. An escape sequence in Python starts with a backslash (\). For example, \n is an escape sequence in which the common meaning of the letter n is literally escaped and given an alternative meaning - a new line.
+
+Displayed here are a few common escape sequences available in python. You can try these out in IDLE or the Python prompt from the windows command prompt.
+
+Escape sequence
+
+Description
+
+Example
+
+Result
+
+\n  Breaks the string into a new line
+
+>>> print('I designed this rhyme to explain in due time\nAll I know')	I designed this rhyme to explain in due time
+All I know
+
+\t  Adds a horizontal tab
+
+>>> print('Time is a \tvaluable thing')	Time is a valuable thing
+
+\\  Prints a backslash
+
+>>> print('Watch it fly by\\ as the pendulum swings')	Watch it fly by\ as the pendulum swings
+
+\'  Prints a single quote
+
+>>> print('It doesn\'t even matter how hard you try')	It doesn't even matter how hard you try
+
+\"  Prints a double quote
+
+>>> print('It is so \"unreal\"')	It is so "unreal"
+
+\a  makes a sound like a bell
+
+>>> print('\a')
+Sound effect is heard

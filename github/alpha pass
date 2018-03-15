@@ -1,0 +1,76 @@
+Alpha password
+
+        roundcube alphainfo lab
+https://master.alphainfolab.com:8080/webmail
+
+username : mp@alphainfolab.com
+Password : 123@alpha
+
+mailto : sblstatus@alphainfolab.com
+password : FyOrIVvhepYstv
+
+
+        Gmail Login :
+
+ID :
+techsupport@alphainfonet.com
+Password : TECH#team4321
+
+
+        AlphaInfolab Login :
+
+https://master.alphainfolab.com:8080/webmail
+
+Email ID   : techsupport@alphainfolab.com
+Password : Njl0DsP_4m
+
+        Garudaaim
+http://updates.garudaim.com/admin/login.php
+
+User :
+  techsupport@alphainfonet.com
+Password : tech@123
+
+        GBS HRM
+http://192.168.3.254/gbshrm/index.php/
+
+GBS HRM. The login credentials for your Sentrifugo acount
+
+Username: GBS-716
+Password: 5a16d83221b5d
+
+Licence server for
+
+1 Pycharm Proffesional
+http://www.aku.vn/idea
+
+
+
+
+
+
+d1=knowledgeback.com
+d2=habitationalert.com
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support};
+do
+useradd $i.$d1;
+echo '0nW3AtUTtGg7' | passwd --stdin $i.$d1;
+mkdir -p /home/$i.$d1/mail/.imap/INBOX  &&  chown -R $i.$d1:$i.$d1 /home/$i.$d1/mail ;
+chmod -R 700  /home/$i.$d1/mail ;
+useradd $i.$d2;
+echo '0nW3AtUTtGg7' | passwd --stdin $i.$d2;
+mkdir -p /home/$i.$d2/mail/.imap/INBOX  &&  chown -R $i.$d2:$i.$d2 /home/$i.$d2/mail ;
+chmod -R 700  /home/$i.$d2/mail ;
+echo $i@$d1 $i.$d1 >> /etc/mail/virtusertable
+echo $i@$d2 $i.$d2 >> /etc/mail/virtusertable
+echo $i.$d1 $i@$d1 >> /etc/mail/genericstable
+#echo $HOSTNAME > /etc/mail/local-host-names
+echo $d1 > /etc/mail/local-host-names
+echo $d1 > /etc/mail/sendmail.gdf
+echo $i.$d2 $i@$d2 >> /etc/mail/genericstable
+#echo $HOSTNAME > /etc/mail/local-host-names
+echo $d2 >> /etc/mail/local-host-names
+echo $d2 >> /etc/mail/sendmail.gdf
+done
+echo @$d2  bounce.$d2 >> /etc/mail/virtusertable
+echo @$d1 bounce.$d1 >> /etc/mail/virtusertable

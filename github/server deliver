@@ -1,0 +1,63 @@
+Dear Client,
+
+We have replaced your server with new domain
+New server login detail:-
+
+OLD URL:-  http://donerhops.com/
+
+New URL  :- http://instrese.com/instrese/
+UserName :- info
+Password :- $3re0FR45rtD
+
+For exporting old data : -
+
+New URL  :- http://instrese.com/donerhops/
+UserName :- info
+Password :- (same that you used for the old url : donerhops.com)
+
+With Regards
+Mayank Patil
+
+
+rismedia,adwerx,amerispec,lenovo,halfpricebanner,paperless,homes,quicken,doublehomesales
+d1=bannoid.com
+for i in {rismedia,adwerx,amerispec,lenovo,halfpricebanner,paperless,homes,quicken,doublehomesales};
+do
+useradd $i.$d1;
+passwd $i.$d1;
+mkdir -p /home/$i.$d1/mail/.imap/INBOX  &&  chown -R $i.$d1:$i.$d1 /home/$i.$d1/mail ;
+chmod -R 700  /home/$i.$d1/mail ;
+echo $i@$d1 $i.$d1
+echo $i.$d1 $i@$d1
+done
+
+
+Dear Sir,
+Your Server has been replaced please look the below  login details
+
+SERVER DETAIL'S:-
+
+Login URL:-  http://junamind.com/junamind
+User Name:- info
+Password:- UnbeLLx7VYItks
+
+Exporting URL:  veen.junamind.com/tiumerwa
+
+
+Note:- Please follow this instruction:-
+
+1. Always use Opt-In lists for a better open rate.
+2. Don't use Spam words or more URL in email otherwise, your mail may be land on Spam folder.
+3. The email should have an unsubscribe button or link, to using this button or link users can do easily unsubscribe, it also increases your open rate.
+4. As per the International standard of bulk mailing, more than 1% open rate considers good. If your list is targeted and your mail is Spam free, surely you will get more than 1% open rate with us.
+5. Please Do not Change BOUNCE USERNAME & BOUNCE E-MAIL ADDRESS of contact Lists, Its Used by technical Team.
+6. We are considering hard bounce 3% only.
+7. If you have any query feel free to contact us: techsupport@alphainfolab.com
+
+
+With  Regard,
+Mayank Patil
+Tech Support Team.
+
+
+fufrylop.com		astaneoa.com

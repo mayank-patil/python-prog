@@ -1,0 +1,25 @@
+9300013211 trundeep sir
+9098719991 Mohit sir
+9300002529 Ajay sir
+9893605532 Rohit sukla sir
+7898900302-Navin Streemlime- UPS
+
+for i in `cat domain`; do sshpass -p "random@123" ssh -o StrictHostKeyChecking=no root@$i 'cd /' ;  find . -type d -mtime +2 -exec rm -rfv {} \; service pmta restart'; done
+
+This is the final verification of the choices and inputs done by you before completing the registration process.
+
+Your authentication image is shown below
+HouseHome-020527_1523_1002_lstpRS
+
+Your authentication message is shown below
+brown vass
+
+Your chosen questions are as shown below	 	Your chosen answers are as shown below
+1) What is the model of PC you use at your work? (E.g. Dell Inspiron, Sony Vaio etc)	 	intel
+2) What is the pin code of your office area? (E.g. 2000,1990 etc)	 	457001
+3) How many brothers/sisters do you have? (E.g. one/two etc)	 	1
+4) In which city did you complete your college? (E.g. Bangalore, Delhi etc)	 	indore
+5) When is your Mother's Birthday (MMDD)? (E.g. 10/15, 05/10 etc)	 	06/11
+
+Your chosen contact numbers are as shown below
+Mobile 1	 	91-87-18049571

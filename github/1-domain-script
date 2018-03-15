@@ -1,0 +1,57 @@
+#!/bin/bash
+d1=domain1
+I=iemname
+firewall-cmd --permanent --add-port={8080,443,25,80,143,2525,10000,110,3306}/tcp
+firewall-cmd --permanent --add-service={http,https,mysql,smtp,imap,pop3}
+firewall-cmd --reload
+yum install httpd mariadb mariadb-server sendmail sendmail-cf dovecot php php-* --skip-broken -y
+yum install epel-release.noarch -y
+yum repolist
+yum install php-imap -y
+yum remove epel-release -y
+systemctl enable httpd mariadb sendmail dovecot
+systemctl restart httpd mariadb sendmail dovecot
+service postfix stop
+systemctl disable postfix
+yum remove postfix -y
+yum groupinstall base -y
+#Configuring Sendmail
+#Adding users
+d1=domain1
+for i in {abuse,admin,bounce,fbl,info,noreply,postmaster,support};
+do
+useradd $i.$d1;
+passwd $i.$d1;
+mkdir -p /home/$i.$d1/mail/.imap/INBOX  &&  chown -R $i.$d1:$i.$d1 /home/$i.$d1/mail ;
+chmod -R 700  /home/$i.$d1/mail ;
+echo $i@$d1 $i.$d1 >> /etc/mail/virtusertable
+echo $i.$d1 $i@$d1 >> /etc/mail/genericstable
+#adding $HOSTNAME > /etc/mail/local-host-names
+echo $d1 > /etc/mail/local-host-names
+#adding $HOSTNAME > /etc/mail/sendmail.gdf
+echo $d1 > /etc/mail/sendmail.gdf
+done
+cd /etc/mail
+make ; make all
+m4 /etc/mail/sendmail.mc /etc/mail/sendmail.cf
+service sendmail restart ; service dovecot restart
+#IEM Configuration
+egrep --color 'upload_max_filesize|max_execution_time|memory_limit|post_max_size' /etc/php.ini
+sed -i 's/max_execution_time = 30/max_execution_time = 300/g' /etc/php.ini
+sed -i 's/memory_limit = 128/memory_limit = 512/g' /etc/php.ini
+sed -i 's/post_max_size = 8/post_max_size = 80/g' /etc/php.ini
+sed -i 's/upload_max_filesize = 2/upload_max_filesize = 50/g' /etc/php.ini
+service httpd restart
+unzip /opt/License_iem_fbl_import_spam_emailmarketer.zip
+mv /opt/License_iem_fbl_import_spam_emailmarketer /var/www/html/$I
+chmod -R 777 /var/www/html
+chmod -R 777 /var/www/html/*
+chmod -R 777 /var/www/html/$I
+chmod -R 777 /var/www/html/$I/*
+#PMTA installation
+cd /
+tar xzvf /opt/pmta4.tar.gz
+rpm -ivh /pmta4/40.rpm
+cp -rvf /pmta4/pmtal64f_87048943/etc/pmta/license /etc/pmta/license
+systemctl start pmta
+systemctl enable pmta

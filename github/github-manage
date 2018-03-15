@@ -1,0 +1,4 @@
+git add "folder name"
+git commit -m "adding New repo"
+git remote add origin https://github.com/mayank-patil/python-prog.git
+git push -u origin master
