@@ -6,7 +6,7 @@ pmtastats top-domains /var/log/pmta/acct-2017-0pmtastats top-domains /var/log/pm
 pmtastats "top-domains" /var/log/pmta/acct-2017-(date)
 sync; echo 3 > /proc/sys/vm/drop_caches
 
-  v=spf1 mx a ptr 103.225.131.64 ?all
+  v=spf1 mx a ptr 103.245.115.128 ?all
 
     cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep hotmail |cut -d',' -f15 |sort -u
     cat /var/log/pmta/acct-2017-09-05-000* | grep -v "success" | grep comcast |cut -d',' -f15 |sort -u

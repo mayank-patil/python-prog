@@ -1,0 +1,40 @@
+      Date 28/01/2018
+
+hampty.info  =       8  IP css and sbl both
+knowledgeback.com = 16  IP
+brickin.info =       8  IP
+bratejel.info =      8  IP
+dulot.info =        16  IP
+souby.info =        16  IP
+obirch.com =        16  IP
+fusuff.com =        16  IP
+gatro.info =        16  IP
+fusas.info =        16  IP
+gifory.com =        16  IP
+basedopon.com =     15  IP
+vidyasite.com =     15  IP
+duant.info =        14  IP
+kelcoms.info =       1  IP
+simpltown.com =     15 IP
+Technology Stack
+
+·         AWS: EC2, EBS, ELB, ASG, Route53, EFS, VPC, SNS, SQS, IAM, S3, RDS, Opsworks, Lightsail, Beanstalk, CloudWatch, CloudTrail
+
+
+
+
+
+
+
+
+
+Work:
+
+·    AWS ELB implementation to distribute traffic to another web server
+·    AWS ASG (Auto Scaling Group) implementation
+·    GIT Server configuration for versioning releases
+·    RDS Multi –AZ  configuration with Read Replica
+·    Redis Cluster Configuration
+·    SSL Configurations ELB
+·    SQS, IAM, S3 Buckets, Configuration
+Scripted the backup of database (MySQL) and website code

@@ -5,6 +5,7 @@
 7898900302-Navin Streemlime- UPS
 
 for i in `cat domain`; do sshpass -p "random@123" ssh -o StrictHostKeyChecking=no root@$i 'cd /' ;  find . -type d -mtime +2 -exec rm -rfv {} \; service pmta restart'; done
+<<<<<<< HEAD
 
 This is the final verification of the choices and inputs done by you before completing the registration process.
 
@@ -23,3 +24,14 @@ Your chosen questions are as shown below	 	Your chosen answers are as shown belo
 
 Your chosen contact numbers are as shown below
 Mobile 1	 	91-87-18049571
+=======
+>>>>>>> 8e73dad671134f114701da99a68fa06160ae3bbf
+AU DATA
+unfiltered = 95487
+old filtered = 90241
+old filtered OK = 70388
+old filtered not OK = 19853
+
+newfiltered total = 89327
+newfiltered ok = 69502
+newfiltered not ok = 19825
